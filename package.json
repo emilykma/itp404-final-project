@@ -1,34 +1,39 @@
 {
   "name": "final-project",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "A React-based meal planner application.",
+  "main": "index.js",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
     "json-server": "^1.0.0-beta.3",
     "react": "^18.3.1",
+    "react-bootstrap": "^2.10.6",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.0.2",
-    "react-scripts": "5.0.1",
-    "react-toastify": "^10.0.6",
-    "web-vitals": "^2.1.4"
+    "react-scripts": "^5.0.1",
+    "react-toastify": "^10.0.6"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "concurrently": "^9.1.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "prettier": "^3.4.2"
   },
   "scripts": {
     "start": "react-scripts start",
-    "server": "json-server --watch db.json --port 3000",
+    "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "json-server --watch db.json --port 3001"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
+  "author": "Emily Ma",
+  "license": "ISC",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -40,5 +45,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "jest": {},
+  "keywords": []
 }
