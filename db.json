@@ -490,7 +490,7 @@
         "1. In a small bowl, beat the eggs with the salt and pepper. Set aside.\n",
         "2. Heat a 10-inch nonstick skillet over medium heat, for about 3 minutes. Brush it with olive oil. Add the onions and cook, stirring occasionally, until golden, about 5 minutes. Add the chorizo and cook, stirring occasionally, for 1 more minute.\n",
         "3. Pour the eggs on top and gently stir, using a heat-resistant spatula, to distribute the onions and chorizo evenly. Cook for 2-3 minutes, until the bottom is starting to set. Gently lift the omelet's edges and allow the uncooked egg from the top to slide under, where it will cook faster.\n",
-        "4. When the bottom is set, flip the omelet (see \"Notes\" for tips on how to flip it).\n"
+        "4. When the bottom is set, flip the omelette.\n"
       ],
       "prepTime": "10",
       "isVegan": false,
@@ -804,11 +804,11 @@
       "meals": [
         {
           "type": "breakfast",
-          "recipeId": "3"
+          "recipeId": "4"
         },
         {
           "type": "lunch",
-          "recipeId": "10"
+          "recipeId": "20"
         },
         {
           "type": "dinner",
@@ -1201,23 +1201,21 @@
       "recipeId": 4,
       "commenterName": "Joe",
       "body": "Absolutely delicious!! this recipe makes the french toast taste just like creme brulee!"
+    },
+    {
+      "id": "bc48",
+      "recipeId": 1,
+      "commenterName": "emily",
+      "body": "i love acai bowls"
+    },
+    {
+      "id": "d1a4",
+      "recipeId": 19,
+      "commenterName": "andie",
+      "body": "I love pairing this salad with chicken"
     }
   ],
   "groceryItems": [
-    {
-      "id": "33be",
-      "name": "Avocado",
-      "quantity": "1",
-      "unit": "bag",
-      "purchased": true
-    },
-    {
-      "id": "45d2",
-      "name": "Frozen Acai Puree",
-      "quantity": "1",
-      "unit": "Pack",
-      "purchased": true
-    },
     {
       "id": "62b1",
       "name": "Pasta",
@@ -1241,6 +1239,12 @@
       "name": "Whole Milk",
       "quantity": "1",
       "unit": "Carton"
+    },
+    {
+      "id": "0da5",
+      "name": "salmon",
+      "quantity": "4",
+      "unit": "filets"
     }
   ],
   "favorites": [
@@ -1374,38 +1378,6 @@
       "favoritedAt": "2024-12-08T23:40:01.222Z"
     },
     {
-      "id": "10",
-      "name": "Tuna Poke Bowl",
-      "category": "Lunch",
-      "ingredients": [
-        "1/2 pound sushi grade tuna, cut into 1/2-inch cubes",
-        "1/4 cup sliced scallions",
-        "2 tablespoons reduced sodium soy sauce or gluten-free tamari",
-        "1 teaspoon sesame oil",
-        "1/2 teaspoon sriracha",
-        "2 tablespoons light mayonnaise",
-        "1 cup cooked short grain brown rice or sushi white rice",
-        "1 cup cucumbers, (from 2 Persian) peeled and diced 1/2-inch cubes",
-        "1/2 medium Hass avocado, (3 ounces) sliced",
-        "2 scallions, sliced for garnish",
-        "1 teaspoon black sesame seeds",
-        "Reduced sodium soy or gluten-free tamari, for serving (optional)"
-      ],
-      "instructions": [
-        "1. In a small bowl combine the mayonnaise and sriracha, thin with a little water to drizzle.",
-        "2. In a medium bowl, combine tuna with scallions, soy sauce, sesame oil and sriracha. Gently toss to combine and set aside while you prepare the bowls.\n",
-        "3. In 2 bowls, layer 1/2 the rice, 1/2 the tuna, avocado, cucumber and scallions.\n",
-        "4. Drizzle with spicy mayo and sesame seeds and serve with extra soy sauce on the side, if desired."
-      ],
-      "prepTime": "15",
-      "isVegan": false,
-      "isVegetarian": false,
-      "isGlutenFree": true,
-      "skillLevel": "Beginner",
-      "image": "/images/poke.jpg",
-      "favoritedAt": "2024-12-09T01:05:01.898Z"
-    },
-    {
       "id": "9",
       "name": "Green Goddess Chicken Wrap",
       "category": "Lunch",
@@ -1469,6 +1441,43 @@
       "skillLevel": "Intermediate",
       "image": "/images/chicken.jpg",
       "favoritedAt": "2024-12-09T09:00:59.740Z"
+    },
+    {
+      "id": "17",
+      "name": "Blueberry Breakfast Cake",
+      "category": "Breakfast",
+      "ingredients": [
+        "2 cups all-purpose flour approximately 9 ounces",
+        "½ cup sugar",
+        "smoked 2 teaspoons baking powder",
+        "1 large egg lightly beaten",
+        "½ cup milk",
+        "¼ cup butter or margarine softened (NOT melted)",
+        "1 teaspoon grated lemon peel",
+        "2 cups fresh or frozen blueberries",
+        "⅓ cup sugar",
+        "¼ cup all-purpose flour",
+        "¼ cup walnuts finely chopped",
+        "½ teaspoon ground cinnamon",
+        "3 tablespoons cold butter or margarine",
+        "½ cup powdered sugar (optional)",
+        "2 tablespoons milk more or less to get to a drizzling consistency (optional)"
+      ],
+      "instructions": [
+        "1. Preheat the oven to 350 F and spray or grease a 9-inch square baking pan. \n",
+        "2. In a large bowl, whisk together flour, sugar and baking powder. Cut butter into small pieces.\n",
+        "3. Add egg, milk, butter and lemon peel; mix just until dry ingredients are moistened. You may need to finish mixing with your hands to get all the flour incorporated. the batter will be very thick.",
+        "4. Fold in the blueberries. Because the batter is so thick, this may take a few minutes. Spread into a greased 9-in. square baking pan.\n",
+        "5. For topping, combine sugar, flour, walnuts and cinnamon in a mini food processor or bowl. Add butter and pulse, or cut in if doing by hand, until mixture is crumbly. Don't over process. I like to do this with my fingers so I can tell when it's ready by touch. Sprinkle over batter.\n",
+        "6. Bake at 350 degrees F for 40-45 minutes or until cake tests done.\n"
+      ],
+      "prepTime": "45",
+      "isVegan": false,
+      "isVegetarian": false,
+      "isGlutenFree": false,
+      "skillLevel": "Beginner",
+      "image": "/images/blueberrycake.jpg",
+      "favoritedAt": "2024-12-10T08:06:38.380Z"
     }
   ]
 }
