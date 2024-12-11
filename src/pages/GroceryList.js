@@ -33,12 +33,13 @@ export default function GroceryList() {
     const fetchItems = async () => {
       try {
         const items = await getGroceryItems();
-        setGroceryItems(items);
+        setGroceryItems(items || []);
   
         // set document title
         document.title = "Grocery List";
       } catch (error) {
         console.error("Error fetching grocery items:", error);
+        setGroceryItems([]); // ensure it's always an array
         document.title = "Error Loading Grocery List";
       }
     };
@@ -195,7 +196,8 @@ export default function GroceryList() {
       
       {/* Grocery Items List */}
       <ul className="list-group">
-        {groceryItems.map((item) => (
+      {Array.isArray(groceryItems) &&
+        groceryItems.map((item) => (
           <li
             key={item.id}
             className={`list-group-item d-flex justify-content-between align-items-center ${

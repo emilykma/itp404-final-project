@@ -87,6 +87,7 @@ export default function MealPlan() {
                     </h6>
                     <select
                       className="form-select"
+                      data-testid={`select-${plan.day.toLowerCase()}-${meal.type}`}
                       value={meal.recipeId || ""}
                       onChange={(e) =>
                         handleUpdateMeal(plan.id, meal.type, e.target.value)

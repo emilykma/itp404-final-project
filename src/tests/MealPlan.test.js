@@ -3,48 +3,55 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import MealPlan from "../pages/MealPlan";
 
-test("Debug react-router-dom", () => {
-  console.log("RouterDom exports:", RouterDom);
-  expect(RouterDom).toBeDefined();
-});
+// Mock API Data
+const mockMealPlans = [
+  {
+    id: 1,
+    day: "Monday",
+    meals: [
+      { type: "breakfast", recipeId: null },
+      { type: "lunch", recipeId: null },
+      { type: "dinner", recipeId: null },
+    ],
+  },
+  {
+    id: 2,
+    day: "Tuesday",
+    meals: [
+      { type: "breakfast", recipeId: null },
+      { type: "lunch", recipeId: null },
+      { type: "dinner", recipeId: null },
+    ],
+  },
+];
+
+const mockRecipes = [
+  { id: 1, name: "Pancakes", category: "Breakfast" },
+  { id: 2, name: "Sandwich", category: "Lunch" },
+  { id: 3, name: "Spaghetti", category: "Dinner" },
+];
+
+// Mock the API functions
+jest.mock("../services/api", () => ({
+  getMealPlans: jest.fn(() => Promise.resolve(mockMealPlans)),
+  getRecipes: jest.fn(() => Promise.resolve(mockRecipes)),
+  updateMealPlan: jest.fn(() => Promise.resolve()),
+}));
 
 // Test 1: Render meal plan with meals
-test("renders meal plan with meals", () => {
-  const mockMeals = [
-    { day: "Monday", meal: "Spaghetti" },
-    { day: "Tuesday", meal: "Salad" },
-  ];
+test("renders meal plan with meals", async () => {
   render(
     <BrowserRouter>
-      <MealPlan meals={mockMeals} />
+      <MealPlan />
     </BrowserRouter>
   );
 
-  // assert each meal is displayed under the correct day
-  mockMeals.forEach(({ day, meal }) => {
-    expect(screen.getByText(day)).toBeInTheDocument();
-    expect(screen.getByText(meal)).toBeInTheDocument();
-  });
+  // Verify that days render correctly
+  const monday = await screen.findByText("Monday");
+  const tuesday = await screen.findByText("Tuesday");
+  expect(monday).toBeInTheDocument();
+  expect(tuesday).toBeInTheDocument();
 });
 
 // Test 2: Add a new meal to the meal plan
-test("adds a new meal to the meal plan", () => {
-  render(
-    <BrowserRouter>
-      <MealPlan meals={[]} />
-    </BrowserRouter>
-  );
-
-  // input a new meal and assign to a day
-  const inputField = screen.getByPlaceholderText("Add meal");
-  fireEvent.change(inputField, { target: { value: "Tacos" } });
-
-  const daySelect = screen.getByLabelText("Select Day");
-  fireEvent.change(daySelect, { target: { value: "Friday" } });
-
-  fireEvent.click(screen.getByText("Add"));
-
-  // assert the new meal appears under the correct day
-  expect(screen.getByText("Friday")).toBeInTheDocument();
-  expect(screen.getByText("Tacos")).toBeInTheDocument();
-});
+test("updates a meal in the meal plan", 

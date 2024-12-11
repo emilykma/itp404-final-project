@@ -171,7 +171,7 @@ export default function RecipeDetails() {
 
   if (!recipe) {
     return (
-      <div className="container mt-5 text-center">
+      <div className="container mt-5 text-center" data-testid="loading-state">
         <div className="spinner-border text-primary" role="status">
           <span className="visually-hidden">Loading...</span>
         </div>
@@ -211,6 +211,7 @@ export default function RecipeDetails() {
             <input
               type="text"
               id="name"
+              data-testid="input-name"
               className={`form-control ${
                 recipeErrors.name ? "is-invalid" : ""
               }`}
@@ -220,7 +221,7 @@ export default function RecipeDetails() {
               }
             />
             {recipeErrors.name && (
-              <div className="invalid-feedback">{recipeErrors.name}</div>
+              <div className="invalid-feedback" data-testid="error-name">{recipeErrors.name}</div>
             )}
           </div>
 
@@ -336,4 +337,120 @@ export default function RecipeDetails() {
               className="btn btn-primary mt-2"
               onClick={() => {
                 setUpdatedRecipe({
-                  ...updatedRecipe
+                  ...updatedRecipe,
+                  instructions: [...updatedRecipe.instructions, ""],
+                });
+              }}
+            >
+              Add Instruction
+            </button>
+          </div>
+
+          <button className="btn btn-success me-2" onClick={handleUpdateRecipe}>
+            Save Changes
+          </button>
+          <button
+            className="btn btn-secondary"
+            onClick={() => setIsEditing(false)}
+          >
+            Cancel
+          </button>
+        </div>
+      ) : (
+        <div>
+          <h1>{recipe.name}</h1>
+          <p><strong>Category:</strong> {recipe.category}</p>
+          <p><strong>Prep Time:</strong> {recipe.prepTime} minutes</p>
+
+          {/* Display Recipe Image */}
+          {recipe.image && (
+            <div className="mb-4">
+              <img
+                src={recipe.image}
+                alt={recipe.name}
+                style={{
+                  width: "100%",
+                  height: "350px",
+                  objectFit: "cover",
+                  borderRadius: "8px",
+                }}
+              />
+            </div>
+          )}
+
+          <h3>Ingredients</h3>
+          <ul className="list-group mb-3">
+            {recipe.ingredients.map((ingredient, index) => (
+              <li key={index} className="list-group-item">
+                {ingredient}
+              </li>
+            ))}
+          </ul>
+          <h3>Instructions</h3>
+          <ul className="list-group mb-3">
+            {recipe.instructions.map((instruction, index) => (
+              <li key={index} className="list-group-item">
+                {instruction}
+              </li>
+            ))}
+          </ul>
+          <button
+            className="btn btn-primary mt-3"
+            onClick={() => setIsEditing(true)}
+          >
+            Edit Recipe
+          </button>
+        </div>
+      )}
+      <hr />
+      <h3>Comments</h3>
+      <ul className="list-group mb-3">
+        {comments.map((comment) => (
+          <li key={comment.id} className="list-group-item">
+            <strong>{comment.commenterName}</strong>: {comment.body}
+          </li>
+        ))}
+      </ul>
+
+      {/* Add Comment Form */}
+      <h4 className="mt-4">Leave a Comment!</h4>
+      <form onSubmit={handleAddComment} className="mt-3">
+        <div className="mb-3">
+          <label htmlFor="commenterName" className="form-label">
+            Name
+          </label>
+          <input
+            type="text"
+            id="commenterName"
+            className={`form-control ${commentErrors.name ? "is-invalid" : ""}`}
+            value={commenterName}
+            onChange={(e) => setCommenterName(e.target.value)}
+          />
+          {commentErrors.name && (
+            <div className="invalid-feedback">{commentErrors.name}</div>
+          )}
+        </div>
+        <div className="mb-3">
+          <label htmlFor="commentBody" className="form-label">
+            Comment
+          </label>
+          <textarea
+            id="commentBody"
+            data-testid="input-comment"
+            className={`form-control ${commentErrors.body ? "is-invalid" : ""}`}
+            rows="3"
+            value={commentBody}
+            onChange={(e) => setCommentBody(e.target.value)}
+          ></textarea>
+          {commentErrors.body && (
+            <div className="invalid-feedback" data-testid="error-comment">{commentErrors.body}</div>
+          )}
+        </div>
+        <button type="submit" className="btn btn-primary">
+          Add Comment
+        </button>
+      </form>
+    </div>
+    </div>
+  );
+}

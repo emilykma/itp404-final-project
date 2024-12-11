@@ -1220,7 +1220,8 @@
       "id": "62b1",
       "name": "Pasta",
       "quantity": "1",
-      "unit": "box"
+      "unit": "box",
+      "purchased": true
     },
     {
       "id": "b823",
